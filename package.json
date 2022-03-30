@@ -12,7 +12,7 @@
     "format": "prettier --write ./src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "gc": "node .generate_component",
     "storybook": "start-storybook -p 6013",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -o docs-build",
     "test": "jest --env=jsdom",
     "test:coverage": "jest --env=jsdom --coverage"
   },
