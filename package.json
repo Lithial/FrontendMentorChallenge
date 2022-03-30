@@ -9,9 +9,9 @@
     "clean": "rm -rf dist",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "format": "prettier --write './src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write ./src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "gc": "node .generate_component",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6013",
     "build-storybook": "build-storybook",
     "test": "jest --env=jsdom",
     "test:coverage": "jest --env=jsdom --coverage"
@@ -59,6 +59,7 @@
     "sass": "^1.49.8",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
+    "resolve-url-loader": "^5.0.0",
     "webpack": "^5.69.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
@@ -68,7 +69,6 @@
     "react-dom": "^17.0.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --ignore-unknown --write --config ./.prettierrc",
-    "src/**/*": "eslint ./src --fix"
+
   }
 }

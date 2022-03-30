@@ -1,4 +1,5 @@
 import "!style-loader!css-loader!sass-loader!../src/styles/index.scss";
+import { Attribution } from "../src/components";
 
 export const parameters = {
 	actions: { argTypesRegex: "^on[A-Z].*" },
@@ -11,13 +12,10 @@ export const parameters = {
 };
 
 export const decorators = [
-	(StoryFn, { globals: { height = 400 } }) => (
-		<>
-			<div style={{
-				height: `${height}px`
-			}}>
-				<StoryFn />
-			</div>
-		</>
+	(Story) => (
+		<div>
+			{Story()}
+			<Attribution />
+		</div>
 	),
 ];

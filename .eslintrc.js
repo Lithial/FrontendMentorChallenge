@@ -18,7 +18,7 @@ module.exports = {
 			jsx: true,
 			modules: true,
 		},
-		ecmaVersion: "latest",
+		ecmaVersion: 6,
 		sourceType: "module",
 	},
 	plugins: ["react", "jest"],
@@ -31,4 +31,9 @@ module.exports = {
 		"jest/no-identical-title": "error",
 		"jest/prefer-to-have-length": "warn",
 	},
+	settings: {
+		react: {
+			version: "detect"
+		}
+	}
 };

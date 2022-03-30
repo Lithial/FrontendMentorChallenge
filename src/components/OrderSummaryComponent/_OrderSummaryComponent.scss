@@ -1,0 +1,114 @@
+$pale-blue: hsl(225, 100%, 94%);
+$white: #FFFFFF;
+$very-pale-blue: hsl(225, 100%, 98%);
+$desaturated-blue: hsl(224, 23%, 55%);
+$bright-blue: hsl(245, 75%, 52%);
+$hover-blue: #433CF1;
+$dark-blue: hsl(223, 47%, 23%);
+$dark-grey-text: hsl(229, 21%, 61%);
+$border-radius: 20px;
+
+@mixin flex-center($direction, $justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  flex-direction: $direction;
+}
+.order-summary {
+  padding: 0;
+  margin: 0;
+  @include flex-center(column, center);
+  height: 720px;
+  min-width: 340px;
+  background: $pale-blue url("../../src/images/osc/pattern-background-mobile.svg") no-repeat;
+  font-family: 'Red Hat Display', sans-serif;
+  @media only screen and (min-width: 375px)  {
+    max-width: 1400px;
+    background: $pale-blue url("../../src/images/osc/pattern-background-desktop.svg") no-repeat;
+  }
+  &__container {
+    position: relative;
+    top: -5px;
+    width: 320px;
+    height: 570px;
+    border-radius: $border-radius;
+    background-color: $white;
+  }
+  &__hero {
+    width: 100%;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+  &__text-container {
+    @include flex-center(column, center);
+    h1 {
+      font-weight: 900;
+      font-size: 22px;
+      margin-top: 35px;
+      margin-bottom: 3px;
+    }
+    p {
+      color: $desaturated-blue;
+      text-align: center;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      width: 80%;
+    }
+  }
+  &__panel {
+    @include flex-center(row, space-evenly);
+    width: 85%;
+    margin: 10px auto;
+    background-color: $very-pale-blue;
+    border-radius: 20px;
+
+    &--column {
+      flex-direction: column;
+      padding: 15px 0;
+      font-size: 12px;
+      line-height: 10px;
+      p {
+        width: 100px;
+        text-align: left;
+        color: $desaturated-blue;
+        strong {
+          color: #000000;
+        }
+      }
+    }
+    &--link {
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+  &__buttons {
+    @include flex-center(column, center);
+    margin: 25px auto;
+    width: 270px;
+  }
+  &__button {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  &__proceed-button {
+    color: $very-pale-blue;
+    background-color: $bright-blue;
+    border-radius: 10px;
+    box-shadow: 7px 15px 20px 0 #cfcfef;
+    &:hover {
+      background: $hover-blue;
+    }
+  }
+  &__cancel-button {
+    margin-top: 10px;
+    color: $dark-grey-text;
+    background-color: transparent;
+    &:hover {
+      color: #000000;
+    }
+  }
+}
