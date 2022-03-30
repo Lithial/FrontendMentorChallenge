@@ -1,5 +1,5 @@
 # Front-end Style Guide
-
+This is the style guide used to build the components
 ## Layout
 
 The designs were created to the following widths:
